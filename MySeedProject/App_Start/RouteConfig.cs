@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace MySeedProject
+namespace Inspinia_MVC5_SeedProject
 {
     public class RouteConfig
     {

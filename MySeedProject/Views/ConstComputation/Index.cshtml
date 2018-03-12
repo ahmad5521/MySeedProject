@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+
+<div class="container">
+    <div id="ibox1" class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h1>المنافسات</h1>
+        </div>
+        <div class="ibox-content">
+            <div class="sk-spinner sk-spinner-double-bounce">
+                <div class="sk-double-bounce1"></div>
+                <div class="sk-double-bounce2"></div>
+            </div>
+            <div class="col-lg-7">
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();"><i class="fa fa-plus"></i>&nbsp&nbspأضافة منافسة جديدة</button>
+            </div>
+            <div class="col-lg-5" style="float:left;">
+                <div class="input-group" style="float:left;">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn btn-primary btn-sm"> <i class="fa fa-search"></i>&nbsp&nbspأبحث هنا..</button>
+                    </span>
+                    <input type="text" id="search" placeholder="(رقم المنافسة - ملاحضات - الحالة - التاريخ - المستخدم)" class="input form-control input-sm text-center">
+                </div>
+            </div>
+            <table id="myTable"
+                   class="table footable footable-1 footable-filtering footable-filtering-right footable-paging footable-paging-center breakpoint-lg toggle-arrow-tiny"
+                   data-page-size="8"
+                   data-filter=#filter
+                   data-page-navigation=".pagination">
+                <thead>
+                    <tr>
+                        <th id="selector" class="center"> # </th>
+                        <th> رقم المنافسة </th>
+                        <th> ملاحضات </th>
+                        <th> مجزئة </th>
+                        <th> الحالة </th>
+                        <th> التاريخ </th>
+                        <th> المستخدم </th>
+                        <th> الانجاز </th>
+                        <th> العمليات </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="alert" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">أضافة / تعديل منافسة</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="CompetitionID">الرقم</label>
+                        <input type="text" class="form-control" id="CompetitionIDMyModal" placeholder="Id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="competitionNo">رقم المنافسة</label>
+                        <input type="number" class="form-control" id="competitionNoMyModal" placeholder="رقم النافسة" />
+                    </div>
+                    <div class="form-group">
+                        <label for="competitionNote">ملاحظات</label>
+                        <input type="text" class="form-control" id="competitionNoteMyModal" placeholder="ملاحضات" />
+                    </div>
+                    <div class="form-group">
+                        <label for="competitionFragmented">مجزئة؟</label>
+                        <div class="i-checks">
+                            <input type="checkbox" id="competitionFragmentedMyModal" style="position: absolute; opacity: 0;">
+                        </div>
+                    </div>
+                    @*<div class="form-group">
+                            <label for="CompetitionStatusID_FK">الحالة</label>
+                            <input type="text" class="form-control" id="CompetitionStatusID_FK" placeholder="Country" />
+                        </div>*@
+                    @*<div class="form-group">
+                            <label for="CompetitionStatusID_FK">الحالة</label>
+                            <div>
+                                <select id="CompetitionStatusID_FK" data-placeholder="اختر الحالة" class="chosen-select" tabindex="2"></select>
+                            </div>
+                        </div>*@
+
+                    @*<div class="form-group">
+                            <label for="CompetitionAddedDate">تاريخ الأضافة</label>
+                            <input type="checkbox" class="form-control" id="competitionFragmented" placeholder="State" />
+                        </div>*@
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">اضافة</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">تعديل</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">اغلاق</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/plugins/footableStyles")
+
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/chosen")
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/sweetAlert")
+    @Scripts.Render("~/plugins/footable")
+    @Scripts.Render("~/plugins/sparkline")
+
+
+    <script src="~/Scripts/ConstComputation.js"></script>
+
+    <script>
+
+    </script>
+}

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="container">
+    <div class=" ibox">
+        <div class="ibox-title">
+            <label class="header">Foo Table</label>
+        </div>
+        <div class="ibox-content">
+            <table class="table table-striped footable footable-1 footable-filtering footable-filtering-right footable-paging footable-paging-center breakpoint-lg" style="display: table;">
+                <thead><tr class="footable-filtering"><th colspan="7"><form class="form-inline"><div class="form-group footable-filtering-search"><label class="sr-only">Search</label><div class="input-group"><input type="text" class="form-control" placeholder="Search"><div class="input-group-btn"><button type="button" class="btn btn-primary"><span class="fooicon fooicon-search"></span></button><button type="button" class="btn btn-default dropdown-toggle"><span class="caret"></span></button><ul class="dropdown-menu dropdown-menu-right"><li><a class="checkbox"><label><input type="checkbox" checked="checked">ID</label></a></li><li><a class="checkbox"><label><input type="checkbox" checked="checked">First Name</label></a></li><li><a class="checkbox"><label><input type="checkbox" checked="checked">Last Name</label></a></li><li><a class="checkbox"><label><input type="checkbox" checked="checked">Job Title</label></a></li><li><a class="checkbox"><label><input type="checkbox" checked="checked">Started On</label></a></li><li><a class="checkbox"><label><input type="checkbox" checked="checked">Date of Birth</label></a></li><li><a class="checkbox"><label><input type="checkbox" checked="checked">Status</label></a></li></ul></div></div></div></form></th></tr><tr class="footable-header"><th class="footable-sortable footable-first-visible" style="width: 80px; max-width: 80px; display: table-cell;">ID<span class="fooicon fooicon-sort"></span></th><th class="footable-sortable" style="display: table-cell;">First Name<span class="fooicon fooicon-sort"></span></th><th class="footable-sortable" style="display: table-cell;">Last Name<span class="fooicon fooicon-sort"></span></th><th class="footable-sortable" style="display: none;">Never seen but always around<span class="fooicon fooicon-sort"></span></th><th class="footable-sortable" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; word-break: keep-all; white-space: nowrap; display: table-cell;">Job Title<span class="fooicon fooicon-sort"></span></th><th class="footable-sortable" style="display: table-cell;">Started On<span class="fooicon fooicon-sort"></span></th><th class="footable-sortable" style="display: table-cell;">Date of Birth<span class="fooicon fooicon-sort"></span></th><th class="footable-sortable footable-last-visible" style="display: table-cell;">Status<span class="fooicon fooicon-sort"></span></th></tr></thead>
+                <tfoot>
+                </tfoot>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+@section Styles {
+    @Styles.Render("~/plugins/footableStyles")
+
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/footable")
+
+    <script src="~/Scripts/demo-rows.js"></script>
+    <script>
+       
+    </script>
+}
